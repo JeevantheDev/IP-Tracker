@@ -2,10 +2,10 @@ import './MapArea.css';
 import 'leaflet/dist/leaflet.css';
 
 import React, { useContext } from 'react';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
-import { LocationIcon } from './LocationIcon';
+import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
 
 import { AppContext } from '../../app/app.context';
+import { LocationIcon } from './LocationIcon';
 
 export const MapArea = () => {
   const {

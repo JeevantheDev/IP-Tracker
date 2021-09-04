@@ -1,4 +1,5 @@
 import L from 'leaflet';
+
 import iconLocation from '../../assets/icons/icon-location.svg';
 
 const LocationIcon = new L.Icon({

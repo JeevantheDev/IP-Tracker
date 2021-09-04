@@ -1,34 +1,27 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../../app/app.context';
-
 import './ResponseArea.css';
 
-export const ResponseArea = (props) => {
+import React, { useContext } from 'react';
+
+import { AppContext } from '../../app/app.context';
+import { SERVICES } from '../../app/constant';
+
+export const ResponseArea = () => {
   const {
     ipState: [ipConfig],
     loadingState: [isLoading],
   } = useContext(AppContext);
+
   return (
     <div className="responseContainer">
-      <div className="service-box">
-        <p className="service-title">IP ADDRESS</p>
-        <p className="service-value">{!isLoading ? ipConfig.ip : '...'}</p>
-      </div>
-      <hr />
-      <div className="service-box">
-        <p className="service-title">LOCATION</p>
-        <p className="service-value">{!isLoading ? ipConfig.location : '...'}</p>
-      </div>
-      <hr />
-      <div className="service-box">
-        <p className="service-title">TIMEZONE</p>
-        <p className="service-value">{!isLoading ? ipConfig.timezone : '...'}</p>
-      </div>
-      <hr />
-      <div className="service-box">
-        <p className="service-title">ISP</p>
-        <p className="service-value">{!isLoading ? ipConfig.isp : '...'}</p>
-      </div>
+      {SERVICES.map((service, idx) => (
+        <React.Fragment key={idx}>
+          <div className="service-box">
+            <p className="service-title">{service.label}</p>
+            <p className="service-value">{!isLoading ? ipConfig[service.key.toLowerCase()] : '...'}</p>
+          </div>
+          <hr />
+        </React.Fragment>
+      ))}
     </div>
   );
 };

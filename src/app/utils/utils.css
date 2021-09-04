@@ -1,13 +1,35 @@
-/* flex styles */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 :root {
-  --very-dark-text: hsl(0, 0%, 17%);
-  --dark-text: hsl(0, 0%, 59%);
+  --very-dark-text: #2b2b2b;
+  --dark-text: #969696;
   --white-text: #fff;
+  --black-text: #000;
+  --error-text: #e67a7a;
+  --font-primary: 'Rubik', sans-serif;
+  --primary-background: url('../../assets/media/pattern-bg.png');
+  --transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .py-1 {
   padding: 1rem 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-text {
@@ -16,9 +38,10 @@
   color: var(--white-text);
   text-transform: capitalize;
   position: static;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.overflow-hide {
+  overflow: hidden;
 }
 
 /* Loader */
@@ -42,6 +65,7 @@
   -webkit-animation: load8 1.1s infinite linear;
   animation: load8 1.1s infinite linear;
 }
+
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -52,6 +76,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);

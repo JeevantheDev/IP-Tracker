@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
-import ArrowIcon from '../../assets/icons/icon-arrow.svg';
-import DownIcon from '../../assets/icons/icon-down.svg';
-
 import './HeaderArea.css';
+
+import React, { useContext, useEffect, useState } from 'react';
+
 import { AppContext } from '../../app/app.context';
+import { VALIDATION } from '../../app/constant';
+import ArrowIcon from '../../assets/icons/icon-arrow.svg';
+import LogoutIcon from '../../assets/icons/icon-logout.svg';
 import { ResponseArea } from '../ResponseArea/ResponseArea';
 
 const ipRegex =
@@ -34,9 +36,9 @@ export const HeaderArea = () => {
     e.stopPropagation();
     setErrorRes('');
     if (!input) {
-      setErrorRes('Please fill the area.');
+      setErrorRes(VALIDATION.FILL_ALL);
     } else if (!ipRegex.test(input) && !domainRegex.test(input)) {
-      setErrorRes('Invalid Format');
+      setErrorRes(VALIDATION.INVALID);
     } else {
       const reqObj = {
         ipAddress: ipRegex.test(input) ? input.trim() : '',
@@ -48,34 +50,27 @@ export const HeaderArea = () => {
 
   return (
     <div className={`header-container ${userInfo.verification_token ? 'header-background' : ''}`}>
-      <div className="header-text">
-        IP Address Tracker
-        <div className="down-icon">
-          <img src={DownIcon} alt="icon" />
-          <ul>
-            <li
-              onClick={(e) => {
-                e.stopPropagation();
-                logout();
-              }}
-            >
-              Logout
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={`input-button-container ${!userInfo.verification_token ? 'input-hidden' : ''}`}>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          logout();
+        }}
+        className="logout-button"
+      >
+        <img src={LogoutIcon} alt="icon" />
+      </button>
+      <div className="header-text">IP Address Tracker</div>
+      <div className={`input-button-container flex-center ${!userInfo.verification_token ? 'input-hidden' : ''}`}>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           type="text"
           placeholder="Search for any IP address or domain"
         />
-        <div onClick={handlePressButton} className="icon-button">
+        <button disabled={isLoading} onClick={handlePressButton} className="icon-button">
           {isLoading ? <div className="loader">Loading...</div> : <img className="icon" src={ArrowIcon} alt="icon" />}
-        </div>
+        </button>
       </div>
-      {/* <button className="logout-button">Logout</button> */}
       <span className="error-msg">{errorRes}</span>
       <ResponseArea />
     </div>

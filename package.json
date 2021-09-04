@@ -12,7 +12,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.2.1",
-    "react-map-gl": "6.1.0",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
     "sawo-react": "^1.0.6",
@@ -35,9 +34,9 @@
   },
   "browserslist": [
     ">0.2%",
-   "not dead",
-   "not op_mini all"
- ],
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",

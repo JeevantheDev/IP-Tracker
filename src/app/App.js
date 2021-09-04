@@ -1,5 +1,3 @@
-import './App.css';
-// import 'mapbox-gl/dist/mapbox-gl.css';
 import './utils/utils.css';
 
 import React, { Suspense, useContext, useEffect, useState } from 'react';
@@ -35,7 +33,6 @@ function App() {
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
-        {/* <PublicRoutes /> */}
         <div className="overflow-hide">
           {isAuthenticating ? (
             <div>Let me authenticate you...</div>

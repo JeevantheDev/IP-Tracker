@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { GEO_API_PATH } from './api/api.config';
+import { VALIDATION } from './constant';
 
 export const AppContext = React.createContext();
 
@@ -55,7 +56,7 @@ export const AppProvider = ({ children }) => {
       });
       setErrorRes(res.data.messages ? res.data.messages : '');
     } catch (error) {
-      setErrorRes(error.message || 'SOMETHING WENT WRONG');
+      setErrorRes(error.message || VALIDATION.SOMETHING_WRONG);
     }
     setIsLoading(false);
   };
