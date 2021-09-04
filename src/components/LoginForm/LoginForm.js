@@ -11,7 +11,7 @@ export const LoginForm = (props) => {
   return (
     <>
       <div className="form-background">
-        <div className="header-text py-1">IP Address Tracker</div>
+        <div className="header-text flex-center py-1">IP Address Tracker</div>
         <div className="form-container flex-center">
           <SawoLogin config={{ ...sawoConfig, onSuccess: sawoLoginCallback }} />
         </div>
