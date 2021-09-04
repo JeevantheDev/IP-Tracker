@@ -1,0 +1,107 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.header-background {
+  width: 100vw;
+  height: 35vh;
+  background-image: url('../../assets/media/pattern-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header-container .header-text ul {
+  display: none;
+}
+
+.header-container .input-button-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36%;
+}
+
+.header-container .input-button-container input {
+  font-size: 18px;
+  font-family: 'Rubik', sans-serif;
+  color: hsl(0, 0%, 17%);
+  padding: 0.9rem 1.2rem;
+  border: none;
+  width: 100%;
+  border-radius: 15px 0 0 15px;
+}
+
+.header-container .input-button-container input:focus {
+  outline: none;
+}
+
+.header-container .input-button-container .icon-button {
+  min-width: 50px;
+  min-height: 50px;
+  background-color: #000;
+  border-radius: 0 15px 15px 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-container .input-button-container .icon-button:hover {
+  background-color: hsl(0, 0%, 17%);
+}
+
+.input-hidden {
+  visibility: hidden;
+}
+
+.error-msg {
+  color: rgb(230, 122, 122);
+  font-size: 14px;
+  letter-spacing: 0.05rem;
+  margin-top: 0.3rem;
+}
+
+/* Logout Section */
+.logout-button {
+  padding: 1rem;
+  margin-left: 1rem;
+}
+
+.header-container .header-text .down-icon {
+  position: relative;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.header-container .header-text .down-icon:hover ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 80px;
+}
+
+.header-container .header-text .down-icon ul li {
+  display: block;
+  font-size: 1rem;
+  padding: 0.1rem 0.3rem;
+  background-color: #ccc;
+  color: #333;
+  border-radius: 10px;
+}
+.header-container .header-text .down-icon ul li:hover {
+  background-color: rgb(153, 152, 152);
+}
+
+@media (max-width: 500px) {
+  .header-background {
+    height: 38vh;
+  }
+  .header-container .input-button-container {
+    width: 90%;
+  }
+}
