@@ -28,10 +28,6 @@ export const HeaderArea = () => {
     getPublicIP({});
   }, []);
 
-  useEffect(() => {
-    setInput(ipConfig.ip);
-  }, [ipConfig]);
-
   const handlePressButton = (e) => {
     e.stopPropagation();
     setErrorRes('');

@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     if (userInfo.verification_token) localStorage.setItem('userInfo', JSON.stringify(userInfo));
-    setIsUserValid(userInfo.verification_token ? true : false);
+    setIsUserValid(!!userInfo.verification_token);
   }, [userInfo]);
 
   useEffect(() => {

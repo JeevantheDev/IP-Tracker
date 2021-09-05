@@ -9,8 +9,8 @@ export const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [ipConfig, setIpConfig] = useState({
-    ip: '',
-    location: '',
+    ip: 0.0,
+    location: 0.0,
     timezone: '',
     isp: '',
     lat: '',
