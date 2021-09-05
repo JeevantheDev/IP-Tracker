@@ -48,6 +48,7 @@ Users should be able to:
   ![Mobile Screen](./screenshots/mobile1.png)
 
 - Authenticated Route
+
   https://firebasestorage.googleapis.com/v0/b/blog-spot-e4923.appspot.com/o/videos%2Fsawo-demo-auth.mp4?alt=media&token=e0e0b7ec-b6fc-4fd1-b12d-e3fdfe3b1d77
 
 ### Links
