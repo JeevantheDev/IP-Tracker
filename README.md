@@ -9,7 +9,6 @@
   - [Development Setup](#development-setup)
   - [Production Setup](#production-setup)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
